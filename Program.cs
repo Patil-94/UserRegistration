@@ -14,7 +14,7 @@ namespace UserRegistration
 
             Console.WriteLine("-------Welcome To User Registration--------");
             Console.WriteLine();
-            string pattern = "[0-9]{1}"; //pattern for atleast 1numeric password 
+            string pattern = "[@#$%^&+=]{1}"; //pattern for exactly 1special char. 
           
             Program p = new Program(); // create object
             p.ValidPass(pattern );
@@ -46,7 +46,7 @@ namespace UserRegistration
                 }
                 else
                 {
-                    Console.WriteLine("Enter atlest one numeric number");
+                    Console.WriteLine("Enter atlest one special character");
                 }
 
             }
