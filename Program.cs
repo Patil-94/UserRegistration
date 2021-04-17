@@ -14,38 +14,38 @@ namespace UserRegistration
 
             Console.WriteLine("-------Welcome To User Registration--------");
             Console.WriteLine();
-            string Pattern = "^([a-z]{3,})([.]{0,1}[a-z]*)@([a-z]{2}).([a-z]{2})([.]{1}[a-z]{2}){0,1}$"; //pattern using for email.
-         
+            string Pattern = "^91\\s[1-9]{1}[0-9]{9}$"; //pattern using for email.
+            string[]inputs1 = { "92 8978674532", "91 9146293697", "9876543211", "91 8907562431", "990088776655", "990088awek678543" };
+          
             Program p = new Program(); // create object
-            p.ValidName(Pattern);
+            p.Validnumber(inputs1,Pattern);
             Console.WriteLine();
             Console.Read();
         }
 
-        public void ValidName(string Pattern) //method to validate string
+        public void Validnumber(string[] arr, string Pattern) //method to validate string
         {
             Console.WriteLine("Validation Of The Email");
             Regex regex = new Regex(Pattern);
-            IterateLoop(regex);  //calling method
+            IterateLoop(arr,regex);  //calling method
         }
 
-        public void IterateLoop(Regex regex)
+        public void IterateLoop(string[] arr, Regex regex)
         {
-            int i = 0; //initialize i value
-            while (i != 1) 
+            for (int i = 0; i < arr.Length; i++)    //check each name string using for loop 
+
             {
-                Console.WriteLine("Enter Email");
-                string email = Console.ReadLine();
-                bool result = regex.IsMatch(email);  //call the IsMatch metod to determine whether a match is present
+                
+                bool result = regex.IsMatch(arr[i]);  //call the IsMatch metod to determine whether a match is present
                 
                 if (result == true)  ////check result is true or not using if and hence using bool
                 {
-                    Console.WriteLine("Valid email");
-                    i = 1;
+                    Console.WriteLine(arr[i] + "---->" + "Valid");
+                  
                 }
                 else
                 {
-                    Console.WriteLine("Enter email in this format : abc.xyz@bl.co.in");
+                    Console.WriteLine(arr[i] + "--->" + "Invalid MobileNumber");
                 }
                
             }
