@@ -14,35 +14,35 @@ namespace UserRegistration
             
             Console.WriteLine("-------Welcome To User Registration--------");
             Console.WriteLine();
-            string Name = "^[A-Z]{1}[A-Za-z]{2,}$"; //pattern using for string and string has minimum 3 char.
-            string[] Namearr = { "Ankita", "Sonali", "Sai", "Aa", "arohi" };  //Array of name
+            string lastName = "^[A-Z]{1}[A-Za-z]{2,}$"; //pattern using for string and string has minimum 3 char.
+            string[] lastNamearr = { "Khairnar", "Patil", "shinde", "aher", "Ah" };  //Define some  name strings.
 
             Program p = new Program(); // create object
-            p.ValidName(Namearr, Name);
+            p.ValidName(lastNamearr, lastName);
             Console.WriteLine();
             Console.Read();
         }
 
-        public void ValidName(string[]arr, string Name) //method to validate string
+        public void ValidName(string[]arr, string lastName) //method to validate string
         {
             Console.WriteLine("Validation Of The Name");
-            Regex regex = new Regex(Name);  
+            Regex regex = new Regex(lastName);  
             IterateLoop(arr, regex);  //calling method
         }
 
         public void IterateLoop(string[]arr, Regex regex)
         {
-            for (int i = 0; i < arr.Length; i++)    //use for loop 
+            for (int i = 0; i < arr.Length; i++)    //check each name string using for loop 
 
             {
-               bool  result = regex.IsMatch(arr[i]);   
+               bool  result = regex.IsMatch(arr[i]);   //call the IsMatch metod to determine whether a match is present
                 if (result == true)  //check result is true or not using if and hence using bool
                 {
                     Console.WriteLine(arr[i] + "---->" + "Valid");
                 }
                 else
                 {
-                    Console.WriteLine(arr[i] + "--->" + "Invalid Name");
+                    Console.WriteLine(arr[i] + "--->" + "Invalid LastName");
                 }
             } //end loop
         }
